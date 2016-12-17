@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<style>
+		body {
+			background: gray;
+			color: white;
+		}
+
+		@media screen and (max-width: 960px) {
+			body {
+				background: green;
+				color: white;
+			}
+		}
+
+		@media screen and (max-width: 540px) {
+			body {
+				background: black;
+				color: white;
+			}
+		}
+	</style>
+</head>
+<body>
+	<fieldset>
+	<legend>Basic form</legend>
+
+	<form action="done.html" method="post" enctype="multipart/form-data" oninput="n.value = parseInt(n1.value) + parseInt(n2.value)">
+	<!-- enctype="text/plain" or enctype="application/x-www-urlencoded" --><br>
+
+		Name: <input type="text" id="myname" name="name" maxlength="25" size="30" value="Type here..." list="names"><br><br>
+		<datalist id="names">
+			<option>Ashwin</option>
+			<option>Bob</option>
+			<option>Clara</option>
+			<option>Daniel</option>
+		</datalist>
+
+		Address: <input type="text" placeholder="room number"> <input type="text" placeholder="street"> <input type="text" placeholder="city"><br><br>
+
+		Password: <input type="password" name="password" maxlength="25" size="30"><br><br>
+
+		Email: <input type="email" name="mail" maxlength="30" size="30" required placeholder="example@gmail.com"><br><br>
+
+		Gender: <input type="radio" name="sex" value="m" checked="true">Male
+			<input type="radio" name="sex" value="f">Female <br><br>
+
+		Tel: <input type="tel" name="tele" disabled="true"> (Disabled) <br><br>
+
+		DOB: <input type="datetime-local" name="date"><br><br>
+
+		Date: <input type="date"><br><br>
+
+		Time: <input type="time"><br><br>
+
+		Month: <input type="month"><br><br>
+
+		Week: <input type="week"><br><br>
+
+		Age: <input type="number" min="0" max="90" step="1"><br><br>
+
+		Country: 
+			<select>
+			    <optgroup label="Australia">
+  				<option value="aus">Australia</option>
+				<option value="aus">New Zealand</option>
+			    </optgroup>
+			    <optgroup label="Asia">
+  				<option value="ind">India</option>
+				<option value="chi">China</option>
+			    </optgroup>
+			    <optgroup label="Europe">
+  				<option value="uk">UK</option>
+			    </optgroup>
+			    <optgroup label="America">
+  				<option value="usa">USA</option>
+			    </optgroup>
+			</select><br><br>
+
+		Languages spoken:<br>
+		<input type="checkbox" name="option1" value="hin">Hindi<br>
+		<input type="checkbox" name="option2" value="eng">English<br>
+		<input type="checkbox" name="option3" value="mal">Malayalam<br><br>
+
+		Favourite Color: <input type="color"><br><br>
+
+		Points: <input type="range" min="0" max="50" step="5"><br><br>
+
+		Resume: <input type="file" name="myfile" accept="text/*, image/*"><br><br>
+
+		Comment: <br><textarea cols="50" rows="5" maxlength="75" autofocus readonly>This is read only comment</textarea><br><br>
+
+		<input type="hidden" id="country" value="India">
+		
+		Enter n1: <input type="number" id="n1"> Enter n2: <input type="number" id="n2">Sum = <output id="n" for="n1 n2"></output> <br/><br/>
+
+		<input type="submit" onclick = "alert(
+			'Hello, '+document.getElementById('myname').value+' from '+document.getElementById('country').value		
+		);">
+
+		<input type="reset">
+	</form>
+	</fieldset>
+</body>
+</html>
